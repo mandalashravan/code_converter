@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: 'Poppins', 'Clash Grotesk', 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Clash Grotesk', 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+pre, code, .monospace, .editor, .output-editor, .input-editor {
+  font-family: 'Fira Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+  font-size: 1.05em;
+  letter-spacing: 0.01em;
+}
+
+.input-editor {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6); /* emerald */
+  transition: all 0.3s ease;
+}
+
+.input-editor:hover {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.9);
+}
+
+.output-editor {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.6); /* violet */
+  transition: all 0.3s ease;
+}
+
+.output-editor:hover {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.9);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes popup-fast {
+  from { opacity: 0; transform: scale(0.92) translateY(-20px);}
+  to { opacity: 1; transform: scale(1) translateY(0);}
+}
+.animate-popup-fast {
+  animation: popup-fast 0.12s cubic-bezier(.6,1.7,.7,1) both;
+}
