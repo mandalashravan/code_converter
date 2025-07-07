@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Majestic 3D Curtain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Keyframes for waving effect */
+    @keyframes wave {
+      0%, 100% {
+        transform: rotate(2deg);
+      }
+      50% {
+        transform: rotate(-2deg);
+      }
+    }
+
+    /* Shared curtain unit style */
+    .curtain-unit {
+      background: repeating-linear-gradient(
+        to bottom,
+        #7a0000 0px,
+        #a00000 8px,
+        #7a0000 16px
+      );
+      transform-origin: top;
+      animation: wave 2s infinite ease-in-out;
+    }
+
+    /* Custom animation delays */
+    .delay-0 { animation-delay: 0ms; }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+  </style>
+</head>
+<body class="m-0 bg-black">
+
+  <div class="relative h-screen overflow-hidden bg-black group">
+
+    <!-- Left Curtain -->
+    <div class="absolute top-0 left-0 h-full w-1/2 flex space-x-0 overflow-hidden origin-left transition-transform duration-[3s] ease-in-out group-hover:-translate-x-full z-50">
+      <div class="w-[10%] h-full curtain-unit delay-0"></div>
+      <div class="w-[10%] h-full curtain-unit delay-100"></div>
+      <div class="w-[10%] h-full curtain-unit delay-200"></div>
+      <div class="w-[10%] h-full curtain-unit delay-300"></div>
+      <div class="w-[10%] h-full curtain-unit delay-400"></div>
+    </div>
+
+    <!-- Right Curtain -->
+    <div class="absolute top-0 right-0 h-full w-1/2 flex space-x-0 overflow-hidden origin-right transition-transform duration-[3s] ease-in-out group-hover:translate-x-full z-50">
+      <div class="w-[10%] h-full curtain-unit delay-400"></div>
+      <div class="w-[10%] h-full curtain-unit delay-300"></div>
+      <div class="w-[10%] h-full curtain-unit delay-200"></div>
+      <div class="w-[10%] h-full curtain-unit delay-100"></div>
+      <div class="w-[10%] h-full curtain-unit delay-0"></div>
+    </div>
+
+    <!-- Stage Content -->
+    <div class="flex items-center justify-center h-full z-10 relative">
+      <h1 class="text-white text-5xl font-bold tracking-widest text-center">🎭 Welcome to the Grand Stage</h1>
+    </div>
+
+  </div>
+
+</body>
+</html>
